@@ -4,7 +4,7 @@
 }
 
 .header_container {
-    background-color: black;
+    background-color: #131921;
     display: flex;
     gap: 10px;
     align-items: center;
@@ -132,7 +132,7 @@ outline: 1px solid white;
 }
 
 .lower_container {
-    background-color: #232f3e;
+    background-color: #232F3E;
     color: white;
 }
 

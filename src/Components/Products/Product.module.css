@@ -6,6 +6,7 @@
     text-decoration: none;
     position: relative;
     align-items: center;
+   
 }
 
 .card_contenar:hover .button{
@@ -15,7 +16,7 @@
 .card_contenar img{
     padding: 5px;
     width: 100%;
-    height: 200;
+    height: 100;
     object-fit: contain;
 }
 

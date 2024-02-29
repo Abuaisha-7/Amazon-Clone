@@ -16,7 +16,7 @@
 .card_contenar img{
     padding: 5px;
     width: 100%;
-    height: 100;
+    height: 200;
     object-fit: contain;
 }
 
@@ -50,12 +50,51 @@
   .product_contener{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  max-width: 1450px;
+  max-width: 100%;
   margin: 100px auto 100px auto;
-  gap: 10px;
+  gap: 20px;
   justify-items: center;
   }
   
   .product_contener section{
     margin: 0 auto;
+  }
+
+  .product_flexed {
+    box-shadow: none;
+    height: auto;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+  }
+
+  
+  .product_flexed h3 {
+    padding: 20px 0px;
+  }
+
+  
+  .product_flexed .button {
+    display: block;
+    position: static;
+    width: 150px;
+    margin-right: 40px;
+  }
+
+  
+  .product_flexed {
+    height: 50vh;
+  }
+
+  
+  .product_flexed img {
+    width: 200px !important; 
+    height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .product_flexed {
+        display: flex;
+        flex-direction: column;
+    }
   }

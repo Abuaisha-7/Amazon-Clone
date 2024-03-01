@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useContext } from 'react'
 import Rating from '@mui/material/Rating'
 import CurrencyFormat from '../CurrencyFormat/CurrencyFormat'
 import classes from './Product.module.css'
@@ -9,7 +9,7 @@ import { DataContext } from '../DataProvider/DataProvider';
 const ProductCard = ({product, flex, reanderDesc}) => {
     const {image,title,id,rating,price, description} = product
 
-    const [state, dispatch] = useReducer(DataContext)
+    const [state, dispatch] = useContext(DataContext)
 
     console.log(state) 
 

@@ -1,3 +1,4 @@
+
 .card_contenar {
     width: 200px;
     box-shadow: 0 0 10px rgba(0, 0,0, 0.2);
@@ -82,9 +83,9 @@
   }
 
   
-  .product_flexed {
+  /* .product_flexed {
     height: 50vh;
-  }
+  } */
 
   
   .product_flexed img {

@@ -35,7 +35,12 @@ const Results = () => {
         <hr />
         {isLoding? (<Loader/>): ( <div className={classes.product_container}>
           {results?.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard 
+            key={product.id} 
+            product={product}
+            reanderDesc={false}
+            renderAdd={true}
+            />
           ))}
         </div>)}
       </section>

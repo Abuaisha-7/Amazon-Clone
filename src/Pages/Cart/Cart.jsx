@@ -5,6 +5,9 @@ import { DataContext } from "../../Components/DataProvider/DataProvider";
 import ProductCard from "../../Components/Products/ProductCard";
 import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
+import { Type } from "../../Utility/actionType";
+import { SlArrowUp } from "react-icons/sl";
+import { SlArrowDown } from "react-icons/sl";
 
 const Cart = () => {
   const [{ basket, user }, dispatch] = useContext(DataContext);
@@ -13,7 +16,19 @@ const Cart = () => {
     return item.price * item.amount + amount;
   }, 0);
 
-  console.log(basket)
+  const incriment = (item)=>{
+    dispatch({
+      type: Type.ADD_TO_BASKET,
+      item
+    })
+  }
+
+  const dicriment = (id)=>{
+    dispatch({
+      type: Type.REMOVE_FROM_BASKET,
+      id
+    })
+  }
 
   return (
     <Layout>
@@ -27,13 +42,29 @@ const Cart = () => {
           ) : (
             basket?.map((item, i) => {
               return (
-                <ProductCard
-                  key={i}
-                  product={item}
-                  reanderDesc={true}
-                  flex={true}
-                  renderAdd={false}
-                />
+                <section  className={classes.catr_product}>
+
+                  <ProductCard
+                    key={i}
+                    product={item}
+                    reanderDesc={true}
+                    flex={true}
+                    renderAdd={false}
+                  />
+
+                  <div className={classes.btn_container}>
+                    <button className={classes.btn} onClick={()=> incriment(item)}>
+                    
+          <SlArrowDown size={20} />
+                    </button>
+                    <span>{item.amount}</span>
+                    <button className={classes.btn} onClick={()=> dicriment(item.id)}>
+          <SlArrowUp size={20} />
+
+                    </button>
+                  </div>
+
+                </section>
               );
             })
           )}

@@ -40,12 +40,12 @@ const Cart = () => {
           {basket?.length == 0 ? (
             <p>Opps : No item in your cart</p>
           ) : (
-            basket?.map((item, i) => {
+            basket?.map((item) => {
               return (
-                <section  className={classes.catr_product}>
+                <section key={item} className={classes.catr_product}>
 
                   <ProductCard
-                    key={i}
+                    key={item}
                     product={item}
                     reanderDesc={true}
                     flex={true}

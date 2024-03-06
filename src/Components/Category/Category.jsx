@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {categoryInfos} from './CategoryFullInfo'
 import CategoryCard from './CategoryCard'
@@ -7,8 +8,8 @@ const Categorys = () => {
   return (
     <section className={classes.category_contener}>
         {
-            categoryInfos.map((info,i)=>(
-               <CategoryCard key={i} data = {info}/>
+            categoryInfos.map((info)=>(
+               <CategoryCard key={info} data = {info}/>
                ))
         }
      

@@ -120,9 +120,15 @@ outline: 1px solid white;
 
 .cart {
     position: relative;
+   margin-right: 10px;
 }
 
-.cart span {
+.cart_word {
+    margin-right: 5px;
+  font-size: 14px;
+}
+
+.cart_counter {
     position: absolute;
     font-weight: bold;
     top: -6px;

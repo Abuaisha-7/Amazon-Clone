@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import classes from "./Singnup.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { auth } from "../../Utility/fireBase";
 import {
   signInWithEmailAndPassword,
@@ -23,6 +23,7 @@ const Auth = () => {
 
   const [{ user }, dispatch] = useContext(DataContext);
   const naviget = useNavigate();
+  const navStateData = useLocation()
   // console.log(user)
 
   const authHandler = async (e) => {
@@ -39,7 +40,7 @@ const Auth = () => {
             user: userInfo.user,
           });
           setloading({ ...loading, singIn: false });
-          naviget("/");
+          naviget(navStateData?.state?.redirect || "/");
         })
         .catch((err) => {
           seterror(err.message);
@@ -54,7 +55,7 @@ const Auth = () => {
             user: userInfo.user,
           });
           setloading({ ...loading, singUp: false });
-          naviget("/");
+          naviget(navStateData?.state?.redirect || "/");
         })
         .catch((err) => {
           seterror(err.message);
@@ -77,6 +78,16 @@ const Auth = () => {
 
       <div className={classes.login_container}>
         <h1>Sign In</h1>
+        {navStateData?.state?.msg && (
+          <small style={{
+            padding:"5px",
+            textAlign: "center",
+            color: "red",
+            fontWeight: "bold"
+          }}>
+          {navStateData?.state?.msg}
+          </small>
+        )}
         <form action="">
           <div>
             <label htmlFor="email">Email</label>
@@ -104,7 +115,7 @@ const Auth = () => {
             className={classes.login_signInBtn}
             name="SignIn"
           >
-            {loading.singIn ? <ClipLoader color="#000" size={15} /> : "Sign In"}
+            {loading.singIn ? (<ClipLoader color="#000" size={15} />) : "Sign In"}
           </button>
         </form>
         {/* agreement */}

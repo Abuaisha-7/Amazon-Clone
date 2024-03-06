@@ -85,7 +85,8 @@ const Header = () => {
             {/* Cart */}
             <Link to="/cart" className={classes.cart}>
               <BiCart size={35} />
-              <span>{totalItem}</span>
+              <span className={classes.cart_counter}>{totalItem}</span>
+              <span className={classes.cart_word}>Cart</span>
             </Link>
           </div>
         </section>

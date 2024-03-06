@@ -26,7 +26,9 @@ const ProductCard = ({product, flex, reanderDesc, renderAdd}) => {
     
     <div className={`${classes.card_contenar} ${flex? classes.product_flexed: ''}`}>
         <Link to={`/products/${id}`}>
+            <div>
             <img src={image} alt="" />
+            </div>
         </Link>
         <div>
             <h3>{title}</h3>
@@ -50,4 +52,4 @@ const ProductCard = ({product, flex, reanderDesc, renderAdd}) => {
   )
 }
 
-export default ProductCard
+export default ProductCard ;

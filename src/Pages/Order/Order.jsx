@@ -12,14 +12,14 @@ const Order = () => {
 
   useEffect(() => {
     if (user) {
-      db.collection("user")
+      db.collection("users")
         .doc(user.uid)
         .collection("orders")
         .orderBy("created", "desc")
         .onSnapshot((snapshot) => {
-          console.log(snapshot);
+          // console.log(snapshot);
           setOrders(
-            snapshot.docs.map((doc) => ({
+            snapshot?.docs.map((doc) => ({
               id: doc.id,
               data: doc.data(),
             }))
